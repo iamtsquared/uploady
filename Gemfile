@@ -26,6 +26,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'table_cloth'
 gem 'carrierwave'
 gem 'twitter-bootstrap-rails'
+gem 'devise'
 
 
 

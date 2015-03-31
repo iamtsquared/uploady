@@ -1,6 +1,11 @@
 class PhotosController < ApplicationController
+  before_action :authenticate_user!
+  
   def index
-  	@photos = Photo.all
+    #current_user given by devise
+    #current_user returns an instance of the User
+    #index will only present the photos of the signed in user
+    @photos = current_user.photos
   end
 
   def new
@@ -8,7 +13,11 @@ class PhotosController < ApplicationController
   end
 
   def create
-  	@photo = Photo.new(photo_params)
+  	# @photo = Photo.new(photo_params)
+   #  @photo.user = current_user
+
+   #shorter method, same as above two lines that are commented out
+   @photo = current_user.photos.build(photo_params)
 
   	if @photo.save
   		redirect_to photos_path
@@ -18,11 +27,13 @@ class PhotosController < ApplicationController
   end
 
   def edit
-    @photo = Photo.find(params[:id])
+    @photo = current_user.photos.find(params[:id])
+    #@photo = Photo.find(params[:id])
   end
 
   def update
-    @photo = Photo.find(params[:id])
+    @photo = current_user.photos.find(params[:id])
+    #@photo = Photo.find(params[:id])
     if @photo.update_attributes(photo_params)
       redirect_to photos_path
     else
