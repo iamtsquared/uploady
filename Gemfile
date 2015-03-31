@@ -25,6 +25,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'table_cloth'
 gem 'carrierwave'
+gem 'twitter-bootstrap-rails'
+
 
 
 # Use ActiveModel has_secure_password
