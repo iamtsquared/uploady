@@ -1,3 +1,5 @@
+<%= image_tag @photo.filename, size: '200x200' %>
+
 <%= form_for @photo do |form| %>
 	<%= form.label :filename %>
 	<%= form.file_field :filename %><br />
@@ -5,5 +7,5 @@
 	<%= form.label :caption %>
 	<%= form.text_area :caption %><br />
 
-	<%= form.submit 'Upload file' %>
+	<%= form.submit 'Save' %>
 <% end %>

@@ -1,7 +1,17 @@
 class PhotosTable < TableCloth::Base
 
-  column :filename
+  column :filename do |photo|
+    image_tag photo.filename, size: '100x100'
+  end
+
   column :caption
+
+  actions do
+    action do |photo|
+      link_to 'Edit Photo', edit_photo_path(photo)
+    end
+
+  end
   # Define columns with the #column method
   # column :name, :email
 
