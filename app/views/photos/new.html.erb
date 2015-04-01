@@ -1,9 +1,10 @@
-<%= form_for @photo do |form| %>
-	<%= form.label :filename %>
-	<%= form.file_field :filename %><br />
-	
-	<%= form.label :caption %>
-	<%= form.text_area :caption %><br />
+<div class='row'>
+	<div class='col-md-5'>
+	<%= simple_form_for @photo, html: { class: 'form-horizonal' } do |form| %>
+		<%= form.input :filename, label: 'Photo File' %>
+		<%= form.input :caption %>
+		<%= form.submit 'Upload Photo', class: 'btn btn-primary' %>
+	<% end %>
+	</div>
+</div>
 
-	<%= form.submit 'Upload file' %>
-<% end %>

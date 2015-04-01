@@ -27,6 +27,7 @@ gem 'table_cloth'
 gem 'carrierwave'
 gem 'twitter-bootstrap-rails'
 gem 'devise'
+gem 'simple_form', '~>3.1.0'
 
 
 
