@@ -1,0 +1,9 @@
+<div class="row">
+	<div class="col-md-5">
+		<%= simple_form_for [@photo, @comment] do |form| %>
+			<%= form.input :body %>
+			<%= form.submit 'Comment' %>
+		<% end %>
+
+	</div>
+</div>
